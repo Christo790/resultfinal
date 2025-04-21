@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FIRST YEAR IMPROVEMENT - Examination Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            text-align: center;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ccc;
+        }
+        .header, .footer {
+            background: linear-gradient(to bottom, #cce7ff, #66b3ff);
+            padding: 10px;
+        }
+        h2, h3 {
+            margin: 5px 0;
+        }
+        .form-container {
+            margin: 20px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        td {
+            padding: 8px;
+            font-weight: bold;
+            color: maroon;
+        }
+        input[type="text"] {
+            width: 70px;
+            padding: 5px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 5px 15px;
+            background-color: #0099ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #007acc;
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #333;
+            padding: 10px;
+            text-align: left;
+        }
+        #result-section {
+            display: none;
+            padding: 20px;
+        }
+        #result-section img {
+            width: 400px;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #go-back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-content">
+        <div class="header">
+            <h2>GOVERNMENT OF KERALA</h2>
+            <h3>Directorate of Higher Secondary Education</h3>
+            <h3><b>FIRST YEAR IMPROVEMENT - Examination Results - <span style="color: maroon;">April 2025</span></b></h3>
+            <p>Results announced on 20.04.2025. Data updated on 20.04.2025</p>
+        </div>
+        <div class="form-container">
+            <form id="resultForm">
+                <table>
+                    <tr>
+                        <td>Reg Number</td>
+                        <td><input type="text" name="roll1" required></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td>
+                            <input type="text" name="day" placeholder="DD" maxlength="2" required>
+                            <input type="text" name="month" placeholder="MM" maxlength="2" required>
+                            <input type="text" name="year" placeholder="YYYY" maxlength="4" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="footer">
+            <p>Data Provided By Directorate of Higher Secondary Education, Kerala.<br>
+            IT Support by National Informatics Centre, Kerala State Centre.</p>
+        </div>
+        <div class="disclaimer">
+            <p><b>Disclaimer:</b> Neither NIC nor Directorate of Higher Secondary Education is responsible for any inadvertent error that may have crept in the results being published on net. The results published on net are for immediate information to the examinees. These cannot be treated as original mark sheets. Original marksheets will be issued by the Directorate of Higher Secondary Education separately.</p>
+        </div>
+    </div>
+
+    <!-- Hidden result section -->
+    <div id="result-section">
+        <h1>പൊടാ പൂരി മോനെ !</h1>
+        <img src="Gorilla Funny.jpg" alt="Student Photo">
+        <p id="go-back" onclick="goBack()">Go back</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('resultForm');
+        const mainContent = document.getElementById('main-content');
+        const resultSection = document.getElementById('result-section');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            mainContent.style.display = 'none';
+            resultSection.style.display = 'block';
+        });
+
+        function goBack() {
+            resultSection.style.display = 'none';
+            mainContent.style.display = 'block';
+            form.reset();
+        }
+    </script>
+</body>
+</html>
