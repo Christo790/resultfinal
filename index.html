@@ -124,21 +124,28 @@
         <p id="go-back" onclick="goBack()">Go back</p>
     </div>
 
+    <!-- Hidden audio element -->
+    <audio id="bg-audio" src="ada34890-f92c-41ec-87bc-597dd4e4e124.mp3"></audio>
+
     <script>
         const form = document.getElementById('resultForm');
         const mainContent = document.getElementById('main-content');
         const resultSection = document.getElementById('result-section');
+        const audio = document.getElementById('bg-audio');
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             mainContent.style.display = 'none';
             resultSection.style.display = 'block';
+            audio.play();
         });
 
         function goBack() {
             resultSection.style.display = 'none';
             mainContent.style.display = 'block';
             form.reset();
+            audio.pause();
+            audio.currentTime = 0;
         }
     </script>
 </body>
